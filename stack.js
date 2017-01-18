@@ -13,8 +13,19 @@ class Stack {
   empty() {
     if (this.length === 0) {
       return true
+    } else {
+      return false
     }
-    return false
+  }
+
+  push(el) {
+    this[this.length] = el
+    this.length += 1
+  }
+
+  pop() {
+    delete this[this.length-1]
+    this.length -= 1
   }
 }
 
