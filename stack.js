@@ -7,6 +7,10 @@ class Stack {
     for (let i=0; i<args.length; i++) {
       this[i] = args[i]
       this.length += 1
+      if(i = args.length-1) {
+        this.top = args[i]
+        console.log(this.top)
+      }
     }
   }
 
@@ -20,12 +24,18 @@ class Stack {
 
   push(el) {
     this[this.length] = el
+    this.top = el
     this.length += 1
+    return this.top
   }
 
   pop() {
     delete this[this.length-1]
     this.length -= 1
+  }
+
+  peek() {
+    return this.top
   }
 }
 
